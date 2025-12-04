@@ -31,14 +31,7 @@ const data = {
       { name: "Maria Santos", image: "" }
     ]
   },
-  pages: {
-    "/": "Welcome to Zigguratss",
-    "/artwork": "Artwork Collection",
-    "/artist": "Artist Directory",
-    "/exhibitions": "Exhibitions",
-    "/about": "About Us",
-    "/contact": "Contact"
-  }
+ 
 };
 
 const elements = {
@@ -127,7 +120,15 @@ const render = {
     }
   }
 };
+window.addEventListener("scroll", function () {
+    const header = document.querySelector(".header");
 
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
 const isMobile = () => window.innerWidth <= 768;
 
 const openMega = (type) => {
